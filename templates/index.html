@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Agenda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main">
+        <h1 class="title">Lista de contatos</h1>
+        <a href="{{ url_for('adicionar') }}">Adicionar Novo Contato</a>
+        <ul>
+            {% for contato in contatos %}
+            <li>
+                <strong>{{ contato[1] }}</strong> - {{ contato[2] }} - {{ contato[3] }}
+                <a href="{{ url_for('excluir', id=contato[0]) }}" style="color: red;">Excluir</a>
+            </li>
+            {% else %}
+            <li>Nenhum contato cadastrado</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
