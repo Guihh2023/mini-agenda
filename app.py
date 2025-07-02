@@ -17,6 +17,7 @@ def init_db():
     ''')
     conn.commit()
     conn.close()
+init_db()
 
 #página inicial - mostra a lista de contatos
 @app.route('/')
@@ -59,5 +60,5 @@ def excluir(id):
 # inicializa o banco de dados e executa o app
 
 if __name__ == '__main__':
-    init_db()
+    
     app.run(debug=True)
