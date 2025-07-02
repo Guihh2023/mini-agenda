@@ -20,13 +20,14 @@
 
             <label>Email:</label><br>
             <input type="email" name="email" placeholder="Digite seu email" required>
-            
+            <a class="btn-back" href="{{ url_for('index') }}">Voltar</a>
+            <button class="btn" type="submit">Salvar</button>
         </form>
+
         
-        <button class="btn" type="submit">Salvar</button>
     </div>
 
-    <a href="{{ url_for('index') }}">Voltar</a>
+    
 </body>
 
 </html>
